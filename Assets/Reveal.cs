@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Reveal : MonoBehaviour
 {
+    public Faucet faucet;
     public SpriteRenderer result;
     public TextMeshPro cubeText;
 
@@ -19,6 +20,8 @@ public class Reveal : MonoBehaviour
         {
             result.sprite = possibilities[Random.Range(0, possibilities.Length)];
         } while (cur == result.sprite);
+        
+        faucet.RequestGrant();
     }
 
 }

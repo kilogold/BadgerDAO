@@ -1,0 +1,1647 @@
+fileFormatVersion: 2
+guid: 8f39e91704f854e2f882549ca530cfe0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8449541830622663209
+    second: CoinEffect_0
+  - first:
+      213: 5283504565940017645
+    second: CoinEffect_1
+  - first:
+      213: -6131517897258201406
+    second: CoinEffect_2
+  - first:
+      213: -1467972618613577177
+    second: CoinEffect_3
+  - first:
+      213: -5933491878610406350
+    second: CoinEffect_4
+  - first:
+      213: 7961592040256374119
+    second: CoinEffect_5
+  - first:
+      213: -6836958400382782029
+    second: CoinEffect_6
+  - first:
+      213: -310079056873838126
+    second: CoinEffect_7
+  - first:
+      213: 4911910426952299665
+    second: CoinEffect_8
+  - first:
+      213: 1170275328008031788
+    second: CoinEffect_9
+  - first:
+      213: 2025423914878034487
+    second: CoinEffect_10
+  - first:
+      213: -1959486494058310647
+    second: CoinEffect_11
+  - first:
+      213: 4323036021674556634
+    second: CoinEffect_12
+  - first:
+      213: -8412493857221806055
+    second: CoinEffect_13
+  - first:
+      213: -376430017941887081
+    second: CoinEffect_14
+  - first:
+      213: 4547833733565538187
+    second: CoinEffect_15
+  - first:
+      213: -8355067472649592126
+    second: CoinEffect_16
+  - first:
+      213: 4427899509312899644
+    second: CoinEffect_17
+  - first:
+      213: -4616317802877379516
+    second: CoinEffect_18
+  - first:
+      213: 278595492982906553
+    second: CoinEffect_19
+  - first:
+      213: 8305711422516088645
+    second: CoinEffect_20
+  - first:
+      213: -4049496805514217337
+    second: CoinEffect_21
+  - first:
+      213: 4614139574899542781
+    second: CoinEffect_22
+  - first:
+      213: 2320584942347628290
+    second: CoinEffect_23
+  - first:
+      213: 3555600169243616955
+    second: CoinEffect_24
+  - first:
+      213: 1678928032055901038
+    second: CoinEffect_25
+  - first:
+      213: 225343724470284297
+    second: CoinEffect_26
+  - first:
+      213: -7499580482574448557
+    second: CoinEffect_27
+  - first:
+      213: -6429527785574720714
+    second: CoinEffect_28
+  - first:
+      213: -6776681072058494614
+    second: CoinEffect_29
+  - first:
+      213: 8050535135649853811
+    second: CoinEffect_30
+  - first:
+      213: -4479373116735628705
+    second: CoinEffect_31
+  - first:
+      213: 4539378935685356458
+    second: CoinEffect_32
+  - first:
+      213: -5595115393675557690
+    second: CoinEffect_33
+  - first:
+      213: -3728770743237023674
+    second: CoinEffect_34
+  - first:
+      213: 3305513823156653800
+    second: CoinEffect_35
+  - first:
+      213: -8244969428396672347
+    second: CoinEffect_36
+  - first:
+      213: -95512449457188776
+    second: CoinEffect_37
+  - first:
+      213: 1371645169158077631
+    second: CoinEffect_38
+  - first:
+      213: -3345160787094619975
+    second: CoinEffect_39
+  - first:
+      213: -3843068904401153115
+    second: CoinEffect_40
+  - first:
+      213: 8756835832535467246
+    second: CoinEffect_41
+  - first:
+      213: 2240782111981253510
+    second: CoinEffect_42
+  - first:
+      213: 2595670834266883424
+    second: CoinEffect_43
+  - first:
+      213: 14147569322733096
+    second: CoinEffect_44
+  - first:
+      213: -5155828408091813198
+    second: CoinEffect_45
+  - first:
+      213: -5956335414159573627
+    second: CoinEffect_46
+  - first:
+      213: -3772591450505376517
+    second: CoinEffect_47
+  - first:
+      213: 993923224098858109
+    second: CoinEffect_48
+  - first:
+      213: 205693912269722829
+    second: CoinEffect_49
+  - first:
+      213: -5079987862334464458
+    second: CoinEffect_50
+  - first:
+      213: -8063807615476941919
+    second: CoinEffect_51
+  - first:
+      213: -7819047699324168717
+    second: CoinEffect_52
+  - first:
+      213: 6055554769517583874
+    second: CoinEffect_53
+  - first:
+      213: -1615060452858619045
+    second: CoinEffect_54
+  - first:
+      213: 5242877140513511274
+    second: CoinEffect_55
+  - first:
+      213: 1673458984335715478
+    second: CoinEffect_56
+  - first:
+      213: 5286319118986567290
+    second: CoinEffect_57
+  - first:
+      213: 6960166790609151509
+    second: CoinEffect_58
+  - first:
+      213: -1825208505987897697
+    second: CoinEffect_59
+  - first:
+      213: 1474889194694445361
+    second: CoinEffect_60
+  - first:
+      213: 2995660446063028821
+    second: CoinEffect_61
+  - first:
+      213: 5305399697735765555
+    second: CoinEffect_62
+  - first:
+      213: 6820095310026061749
+    second: CoinEffect_63
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CoinEffect_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 456
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9225111078dc24570800000000000000
+      internalID: 8449541830622663209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 456
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de95206d867c25940800000000000000
+      internalID: 5283504565940017645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_2
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 456
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ce89f765f878eaa0800000000000000
+      internalID: -6131517897258201406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_3
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 456
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72aa9875ea6b0abe0800000000000000
+      internalID: -1467972618613577177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_4
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 456
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 234f2c9c29008ada0800000000000000
+      internalID: -5933491878610406350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_5
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 456
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7650f0e37c14d7e60800000000000000
+      internalID: 7961592040256374119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_6
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 456
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b5bf010f8e3e11a0800000000000000
+      internalID: -6836958400382782029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_7
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 456
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d92fba9db062bbf0800000000000000
+      internalID: -310079056873838126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 391
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1947707428c9a2440800000000000000
+      internalID: 4911910426952299665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_9
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 391
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2e825fd537ad3010800000000000000
+      internalID: 1170275328008031788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_10
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 391
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 732e2e5c150cb1c10800000000000000
+      internalID: 2025423914878034487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_11
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 391
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9049a7b5a618ec4e0800000000000000
+      internalID: -1959486494058310647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_12
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 391
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adc31277b528efb30800000000000000
+      internalID: 4323036021674556634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_13
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 391
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 918732d7861d04b80800000000000000
+      internalID: -8412493857221806055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_14
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 391
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 797a7c1a4e6a6caf0800000000000000
+      internalID: -376430017941887081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_15
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 391
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8f56ba6fa62d1f30800000000000000
+      internalID: 4547833733565538187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_16
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 326
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c2ec429666dc0c80800000000000000
+      internalID: -8355067472649592126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_17
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 326
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3ac8b9c42f037d30800000000000000
+      internalID: 4427899509312899644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_18
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 326
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44c9e25aa6b8fefb0800000000000000
+      internalID: -4616317802877379516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_19
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 326
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9be5543ff15cdd300800000000000000
+      internalID: 278595492982906553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_20
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 326
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54fc9f18880d34370800000000000000
+      internalID: 8305711422516088645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_21
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 326
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 788fe3c4c1c4dc7c0800000000000000
+      internalID: -4049496805514217337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_22
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 326
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfa85f12f77b80040800000000000000
+      internalID: 4614139574899542781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_23
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 326
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20f20c7c5bf543020800000000000000
+      internalID: 2320584942347628290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_24
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 261
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb6a51bf387085130800000000000000
+      internalID: 3555600169243616955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_25
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 261
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b332a5620cc4710800000000000000
+      internalID: 1678928032055901038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_26
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 261
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9003a696ce4902300800000000000000
+      internalID: 225343724470284297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_27
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 261
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35882bb19432ce790800000000000000
+      internalID: -7499580482574448557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_28
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 261
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63b905b4b8ab5c6a0800000000000000
+      internalID: -6429527785574720714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_29
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 261
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6117d7287464f1a0800000000000000
+      internalID: -6776681072058494614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_30
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 261
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 371f5346d0f39bf60800000000000000
+      internalID: 8050535135649853811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_31
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 261
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5ad98012e116d1c0800000000000000
+      internalID: -4479373116735628705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_32
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 196
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aab9a62671d1ffe30800000000000000
+      internalID: 4539378935685356458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_33
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 196
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c406a291382a52b0800000000000000
+      internalID: -5595115393675557690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_34
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 196
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 648ec70d3ceb04cc0800000000000000
+      internalID: -3728770743237023674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_35
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 196
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ee456d0f4b8fdd20800000000000000
+      internalID: 3305513823156653800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_36
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 196
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aaf5741dfbf39d80800000000000000
+      internalID: -8244969428396672347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_37
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 196
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8501a7aeeebacaef0800000000000000
+      internalID: -95512449457188776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_38
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 196
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbc3c899300190310800000000000000
+      internalID: 1371645169158077631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_39
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 196
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b8b8a0dcf99391d0800000000000000
+      internalID: -3345160787094619975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_40
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 131
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a3d1d1613daaaac0800000000000000
+      internalID: -3843068904401153115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_41
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 131
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee440b24bc7868970800000000000000
+      internalID: 8756835832535467246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_42
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 131
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68331bb657bd81f10800000000000000
+      internalID: 2240782111981253510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_43
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 131
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 065c15e0fdca50420800000000000000
+      internalID: 2595670834266883424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_44
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 131
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82eaaeba323423000800000000000000
+      internalID: 14147569322733096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_45
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 131
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bad1dc2161d278b0800000000000000
+      internalID: -5155828408091813198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_46
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 131
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58d70f3bf78d65da0800000000000000
+      internalID: -5956335414159573627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_47
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 131
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfc83f5501015abc0800000000000000
+      internalID: -3772591450505376517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_48
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 66
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d746c6208ef1bcd00800000000000000
+      internalID: 993923224098858109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_49
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 66
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc41c4df585cad200800000000000000
+      internalID: 205693912269722829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_50
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 66
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63e124244f14089b0800000000000000
+      internalID: -5079987862334464458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_51
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 66
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ab386692b9971090800000000000000
+      internalID: -8063807615476941919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_52
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 66
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f592f76b892d7390800000000000000
+      internalID: -7819047699324168717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_53
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 66
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e940baaf6a90450800000000000000
+      internalID: 6055554769517583874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_54
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 66
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b949833172699e0800000000000000
+      internalID: -1615060452858619045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_55
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 66
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a67d2593bf072c840800000000000000
+      internalID: 5242877140513511274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_56
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69c24837412593710800000000000000
+      internalID: 1673458984335715478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_57
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 1
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7edc880b37cc5940800000000000000
+      internalID: 5286319118986567290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_58
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 1
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 516aabbc1da779060800000000000000
+      internalID: 6960166790609151509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_59
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 1
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f96e19fb88e8ba6e0800000000000000
+      internalID: -1825208505987897697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_60
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 1
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13903d488ebd77410800000000000000
+      internalID: 1474889194694445361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_61
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 1
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55a6643dd49b29920800000000000000
+      internalID: 2995660446063028821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CoinEffect_62
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 1
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33e41077ae090a940800000000000000
+      internalID: 5305399697735765555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
