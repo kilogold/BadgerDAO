@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using Contracts.Contracts.Faucet.ContractDefinition;
 using Nethereum.JsonRpc.UnityClient;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Faucet : MonoBehaviour
@@ -21,26 +23,47 @@ public class Faucet : MonoBehaviour
     // User Wallet
     [SerializeField] InputField inputWalletAddress;
 
-    public Action OnGetElapsedTime;
-    public Action OnRequestGrant;
-    
+    public UnityEvent<BigInteger> OnGetElapsedTime;
+    public UnityEvent OnCanParticipate_Success;
+    public UnityEvent OnCanParticipate_Fail;
+    public UnityEvent<string> OnRequestGrant;
+
     public void RequestGrant()
     {
         StartCoroutine(RequestGrantCR());
     }
 
-    
-    
-    
-    
-    
-    private IEnumerator GetElapsedTime()
+    public void GetElapsedTime()
+    {
+        StartCoroutine(GetElapsedTimeCR());
+    }
+
+    public void CanParticipate()
+    {
+        StartCoroutine(CanParticipateCR());
+    }
+
+
+
+    private IEnumerator CanParticipateCR()
+    {
+        var queryRequest = new QueryUnityRequest<CanParticipateFunction, CanParticipateOutputDTO>(networkUrl, contractAddress);
+        yield return queryRequest.Query(new CanParticipateFunction() {FromAddress = userWalletAddress}, contractAddress);
+        
+        if(queryRequest.Result.ReturnValue1)
+            OnCanParticipate_Success?.Invoke();
+        else
+            OnCanParticipate_Fail?.Invoke();
+    }
+
+
+    private IEnumerator GetElapsedTimeCR()
     {
         var queryRequest = new QueryUnityRequest<GetElapsedTimeFunction, GetElapsedTimeOutputDTO>(networkUrl, contractAddress);
 
         yield return queryRequest.Query(new GetElapsedTimeFunction() { FromAddress = userWalletAddress }, contractAddress);
 
-        print(queryRequest.Result.ReturnValue1);
+        OnGetElapsedTime?.Invoke(queryRequest.Result.ReturnValue1);
     }
 
     private IEnumerator RequestGrantCR()
@@ -55,6 +78,6 @@ public class Faucet : MonoBehaviour
 
         yield return transactionTransferRequest.SignAndSendTransaction(transactionMessage, contractAddress);
 
-        print(transactionTransferRequest.Result);
+        OnRequestGrant?.Invoke(transactionTransferRequest.Result);
     }
 }
