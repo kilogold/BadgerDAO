@@ -102,22 +102,31 @@ contract Faucet
 
     mapping (address => uint256) private participants;
     uint256 private participantRetryTime = 3 seconds;
+    address private authority;
     
     constructor(uint256 retryAmount) payable
     {
         participantRetryTime = retryAmount;
+        authority = msg.sender;
     }
     
-    receive () external payable {}
-    
-    function grant(address recipient, uint256 amount) public
+    function calculatePayout(uint256 score) private pure returns (uint256)
     {
+        return score * (1000 gwei);
+    }
+    
+    function grant(address recipient, uint score) public
+    {
+        require(msg.sender == authority);
+
         require(canParticipate());
-        
-        require(amount <= FAUCET_TOKEN.balanceOf(address(this)));
+
+        uint256 transferAmount = calculatePayout(score);
+
+        require(transferAmount <= FAUCET_TOKEN.balanceOf(address(this)));
         
         //TODO:Check for gas         
-        require(FAUCET_TOKEN.transfer(recipient, amount));
+        require(FAUCET_TOKEN.transfer(recipient, transferAmount));
         
         participants[msg.sender]  = block.timestamp;
     }
