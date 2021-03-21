@@ -48,9 +48,12 @@ namespace Contracts.Contracts.Faucet
         }
 
         
-        public Task<bool> CanParticipateQueryAsync(BlockParameter blockParameter = null)
+        public Task<bool> CanParticipateQueryAsync(string participant, BlockParameter blockParameter = null)
         {
-            return ContractHandler.QueryAsync<CanParticipateFunction, bool>(null, blockParameter);
+            var canParticipateFunction = new CanParticipateFunction();
+                canParticipateFunction.Participant = participant;
+            
+            return ContractHandler.QueryAsync<CanParticipateFunction, bool>(canParticipateFunction, blockParameter);
         }
 
         public Task<BigInteger> GetElapsedTimeQueryAsync(GetElapsedTimeFunction getElapsedTimeFunction, BlockParameter blockParameter = null)
@@ -59,9 +62,12 @@ namespace Contracts.Contracts.Faucet
         }
 
         
-        public Task<BigInteger> GetElapsedTimeQueryAsync(BlockParameter blockParameter = null)
+        public Task<BigInteger> GetElapsedTimeQueryAsync(string participant, BlockParameter blockParameter = null)
         {
-            return ContractHandler.QueryAsync<GetElapsedTimeFunction, BigInteger>(null, blockParameter);
+            var getElapsedTimeFunction = new GetElapsedTimeFunction();
+                getElapsedTimeFunction.Participant = participant;
+            
+            return ContractHandler.QueryAsync<GetElapsedTimeFunction, BigInteger>(getElapsedTimeFunction, blockParameter);
         }
 
         public Task<string> GrantRequestAsync(GrantFunction grantFunction)
@@ -74,20 +80,20 @@ namespace Contracts.Contracts.Faucet
              return ContractHandler.SendRequestAndWaitForReceiptAsync(grantFunction, cancellationToken);
         }
 
-        public Task<string> GrantRequestAsync(string recipient, BigInteger amount)
+        public Task<string> GrantRequestAsync(string recipient, BigInteger score)
         {
             var grantFunction = new GrantFunction();
                 grantFunction.Recipient = recipient;
-                grantFunction.Amount = amount;
+                grantFunction.Score = score;
             
              return ContractHandler.SendRequestAsync(grantFunction);
         }
 
-        public Task<TransactionReceipt> GrantRequestAndWaitForReceiptAsync(string recipient, BigInteger amount, CancellationTokenSource cancellationToken = null)
+        public Task<TransactionReceipt> GrantRequestAndWaitForReceiptAsync(string recipient, BigInteger score, CancellationTokenSource cancellationToken = null)
         {
             var grantFunction = new GrantFunction();
                 grantFunction.Recipient = recipient;
-                grantFunction.Amount = amount;
+                grantFunction.Score = score;
             
              return ContractHandler.SendRequestAndWaitForReceiptAsync(grantFunction, cancellationToken);
         }

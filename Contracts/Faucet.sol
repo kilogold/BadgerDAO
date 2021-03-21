@@ -112,14 +112,14 @@ contract Faucet
     
     function calculatePayout(uint256 score) private pure returns (uint256)
     {
-        return score * (1000 gwei);
+        return score * (1000000 gwei);
     }
-    
+
     function grant(address recipient, uint score) public
     {
         require(msg.sender == authority);
 
-        require(canParticipate());
+        require(canParticipate(recipient));
 
         uint256 transferAmount = calculatePayout(score);
 
@@ -128,16 +128,16 @@ contract Faucet
         //TODO:Check for gas         
         require(FAUCET_TOKEN.transfer(recipient, transferAmount));
         
-        participants[msg.sender]  = block.timestamp;
+        participants[recipient]  = block.timestamp;
     }
     
-    function canParticipate() public view returns (bool)
+    function canParticipate(address participant) public view returns (bool)
     {
-        return(participants[msg.sender] + participantRetryTime < block.timestamp);
+        return(participants[participant] + participantRetryTime < block.timestamp);
     }
     
-    function getElapsedTime() public view returns (uint256)
+    function getElapsedTime(address participant) public view returns (uint256)
     {
-        return(block.timestamp - participants[msg.sender]);
+        return(block.timestamp - participants[participant]);
     }
 }
