@@ -16,10 +16,7 @@ public class Jump : MonoBehaviour
         }
 
         float axis = Input.GetAxis("Horizontal") * hMagnitude;
-        
-        GetComponent<Rigidbody2D>().AddForce(new Vector2(axis, 0), ForceMode2D.Force);
-        
-        Debug.Log(axis);
 
+        GetComponent<Rigidbody2D>().AddForce(new Vector2(axis, 0), ForceMode2D.Force);
     }
 }

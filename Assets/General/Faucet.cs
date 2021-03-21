@@ -17,8 +17,9 @@ public class Faucet : MonoBehaviour
     [SerializeField] string contractAddress = "0xD5A14BD31cDb3adb142d5ae18014D32b3eEEA24b";
 
     // Gas Fee wallet.
-    [SerializeField] string userWalletAddress = "0x47716F832EE08f6508A4F6AE2f3a50984cC85208";
-    [SerializeField] string userWalletAddressPrivate = "6c48170100b2d7013cc477dd067cd1d4ab203715ccb9bd752b46c066fa48dafa";
+    [SerializeField] string gasWalletAddress = "0x47716F832EE08f6508A4F6AE2f3a50984cC85208";
+    [SerializeField] string gasWalletAddressPrivate = "6c48170100b2d7013cc477dd067cd1d4ab203715ccb9bd752b46c066fa48dafa";
+    [SerializeField] string grantTransactionHash;
 
     // User Wallet
     [SerializeField] InputField inputWalletAddress;
@@ -42,13 +43,19 @@ public class Faucet : MonoBehaviour
     {
         StartCoroutine(CanParticipateCR());
     }
-
+    
+    public void LaunchEtherscan()
+    {
+        string url = "https://ropsten.etherscan.io/tx/" + grantTransactionHash;
+        Debug.Log("Opening URL: "+ url);
+        Application.OpenURL(url);
+    }
 
 
     private IEnumerator CanParticipateCR()
     {
         var queryRequest = new QueryUnityRequest<CanParticipateFunction, CanParticipateOutputDTO>(networkUrl, contractAddress);
-        yield return queryRequest.Query(new CanParticipateFunction() {FromAddress = userWalletAddress}, contractAddress);
+        yield return queryRequest.Query(new CanParticipateFunction() {FromAddress = gasWalletAddress}, contractAddress);
         
         if(queryRequest.Result.ReturnValue1)
             OnCanParticipate_Success?.Invoke();
@@ -61,23 +68,32 @@ public class Faucet : MonoBehaviour
     {
         var queryRequest = new QueryUnityRequest<GetElapsedTimeFunction, GetElapsedTimeOutputDTO>(networkUrl, contractAddress);
 
-        yield return queryRequest.Query(new GetElapsedTimeFunction() { FromAddress = userWalletAddress }, contractAddress);
+        yield return queryRequest.Query(new GetElapsedTimeFunction() { FromAddress = gasWalletAddress }, contractAddress);
 
         OnGetElapsedTime?.Invoke(queryRequest.Result.ReturnValue1);
     }
 
     private IEnumerator RequestGrantCR()
     {
-        var transactionTransferRequest = new TransactionSignedUnityRequest(networkUrl, userWalletAddressPrivate);
+        var transactionTransferRequest = new TransactionSignedUnityRequest(networkUrl, gasWalletAddressPrivate);
         var transactionMessage = new GrantFunction
         {
-            FromAddress = userWalletAddress,
+            FromAddress = gasWalletAddress,
             Recipient = inputWalletAddress.text,
             Amount = 10000000000000
         };
 
         yield return transactionTransferRequest.SignAndSendTransaction(transactionMessage, contractAddress);
 
-        OnRequestGrant?.Invoke(transactionTransferRequest.Result);
+        if (transactionTransferRequest.Exception != null)
+        {
+            Debug.LogError(transactionTransferRequest.Exception.Message);
+        }
+        
+        string transactionHash = transactionTransferRequest.Result;
+        Debug.Log(transactionHash);
+        
+        OnRequestGrant?.Invoke(transactionHash);
+        grantTransactionHash = transactionHash;
     }
 }

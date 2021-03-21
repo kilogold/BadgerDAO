@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Emitter : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Emitter : MonoBehaviour
     
     public float vertRandMin;
     public float vertRandMax;
+
+    public UnityEvent OnEmitEvent;
     
     IEnumerator Start()
     {
@@ -26,6 +29,7 @@ public class Emitter : MonoBehaviour
 
     public void Emit()
     {
+        OnEmitEvent?.Invoke();
         var newParticle = Instantiate(particle, transform.position, transform.rotation);
         GenerateRandom(newParticle.GetComponent<Rigidbody2D>());
     }

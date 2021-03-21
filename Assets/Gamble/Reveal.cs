@@ -21,7 +21,7 @@ public class Reveal : MonoBehaviour
             result.sprite = possibilities[Random.Range(0, possibilities.Length)];
         } while (cur == result.sprite);
         
-        faucet.RequestGrant();
+        //faucet.RequestGrant();
     }
 
 }

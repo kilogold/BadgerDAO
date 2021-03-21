@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,5 +14,10 @@ public class InputFieldValidation : MonoBehaviour
     public void Validate()
     { 
         IsInputFieldPopulatedEvent?.Invoke(!string.IsNullOrEmpty(inputField.text));
+    }
+
+    private void OnEnable()
+    {
+        Validate();
     }
 }
