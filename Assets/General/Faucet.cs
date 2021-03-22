@@ -60,7 +60,7 @@ public class Faucet : MonoBehaviour
     private IEnumerator CanParticipateCR()
     {
         var queryRequest = new QueryUnityRequest<CanParticipateFunction, CanParticipateOutputDTO>(networkUrl, contractAddress);
-        yield return queryRequest.Query(new CanParticipateFunction() {FromAddress = gasWalletAddress}, contractAddress);
+        yield return queryRequest.Query(new CanParticipateFunction() {FromAddress = gasWalletAddress, Participant = inputWalletAddress.text}, contractAddress);
         
         if(queryRequest.Result.ReturnValue1)
             OnCanParticipate_Success?.Invoke();
@@ -73,7 +73,7 @@ public class Faucet : MonoBehaviour
     {
         var queryRequest = new QueryUnityRequest<GetElapsedTimeFunction, GetElapsedTimeOutputDTO>(networkUrl, contractAddress);
 
-        yield return queryRequest.Query(new GetElapsedTimeFunction() { FromAddress = gasWalletAddress }, contractAddress);
+        yield return queryRequest.Query(new GetElapsedTimeFunction() { FromAddress = gasWalletAddress, Participant = inputWalletAddress.text}, contractAddress);
 
         OnGetElapsedTime?.Invoke(queryRequest.Result.ReturnValue1);
     }
