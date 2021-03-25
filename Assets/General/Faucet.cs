@@ -71,10 +71,13 @@ public class Faucet : MonoBehaviour
 
     private IEnumerator GetElapsedTimeCR()
     {
+        Debug.Log("Creating ElapsedTimeQuery");
         var queryRequest = new QueryUnityRequest<GetElapsedTimeFunction, GetElapsedTimeOutputDTO>(networkUrl, contractAddress);
 
+        Debug.Log("Executing ElapsedTimeQuery");
         yield return queryRequest.Query(new GetElapsedTimeFunction() { FromAddress = gasWalletAddress, Participant = inputWalletAddress.text}, contractAddress);
 
+        Debug.Log("Invoking ElapsedTimeQuery Callback");
         OnGetElapsedTime?.Invoke(queryRequest.Result.ReturnValue1);
     }
 
