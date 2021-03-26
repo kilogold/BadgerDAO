@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 7557071572793200606}
   - component: {fileID: 397606758}
   - component: {fileID: 397606759}
+  - component: {fileID: 6201904237817505005}
   m_Layer: 0
   m_Name: BadgerCatcher
   m_TagString: Untagged
@@ -414,6 +415,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6201904237817505005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2349758734531431548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d0234c24e2a54da3ae2f805145cac8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnOutsideBounds:
+    m_PersistentCalls:
+      m_Calls: []
+  boundsLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &3371632517098082422
 GameObject:
   m_ObjectHideFlags: 0
