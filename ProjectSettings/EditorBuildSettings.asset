@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Coin/Coin.unity
     guid: 1db4134b0f8434a7c9c03f283a750612
   - enabled: 0
-    path: Assets/EmptyTest.unity
+    path: Assets/Coin/EmptyTest.unity
     guid: ab52c9bc243e44cf79fb718555411c70
   m_configObjects: {}
