@@ -385,7 +385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &142585430
 Transform:
   m_ObjectHideFlags: 0
@@ -821,7 +821,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &502295724
 Transform:
   m_ObjectHideFlags: 0
@@ -3393,7 +3393,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  lengthInSeconds: 5
+  lengthInSeconds: 60
 --- !u!1 &1612396381
 GameObject:
   m_ObjectHideFlags: 0
@@ -4258,33 +4258,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 142585430}
     m_Modifications:
     - target: {fileID: 397606759, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: CoinCollectedEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 397606759, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: CoinCollectedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 397606759, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
       propertyPath: CoinCollectedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1863349323}
-    - target: {fileID: 397606759, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: CoinCollectedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 397606759, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: CoinCollectedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: IncrementScore
-      objectReference: {fileID: 0}
-    - target: {fileID: 397606759, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: CoinCollectedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ScoreKeep, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 397606759, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: CoinCollectedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 1528514973549678529, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
       propertyPath: m_RootOrder
       value: 3
