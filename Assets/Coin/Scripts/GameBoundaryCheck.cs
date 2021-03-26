@@ -11,6 +11,7 @@ public class GameBoundaryCheck : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        OnOutsideBounds?.Invoke();
+        if((other.gameObject.layer & boundsLayer) > 0)
+            OnOutsideBounds?.Invoke();
     }
 }
