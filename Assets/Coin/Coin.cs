@@ -11,7 +11,7 @@ public class Coin : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.name == "Ground")
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             gameObject.layer = LayerMask.NameToLayer("FreeFall");
             sfxHitGround.pitch += Random.Range(-0.2f, 0.5f);
