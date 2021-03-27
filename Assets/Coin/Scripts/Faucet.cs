@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using System.Runtime.InteropServices;
 using Contracts.Contracts.Faucet.ContractDefinition;
 using Nethereum.JsonRpc.UnityClient;
 using UnityEngine;
@@ -10,7 +11,9 @@ using UnityEngine.UI;
 
 public class Faucet : MonoBehaviour
 {
-
+    [DllImport("__Internal")]
+    private static extern void OpenNewTab(string url);
+    
     [SerializeField] string networkUrl = "https://ropsten.infura.io/v3/e95812f105a340cda6bfd2c67bc22f69";
 
     // Faucet address
@@ -54,6 +57,12 @@ public class Faucet : MonoBehaviour
     {
         string url = "https://ropsten.etherscan.io/tx/" + grantTransactionHash;
         Debug.Log("Opening URL: "+ url);
+        
+#if !UNITY_EDITOR && UNITY_WEBGL
+        OpenNewTab(url);
+        return;
+#endif
+        
         Application.OpenURL(url);
     }
 
