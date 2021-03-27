@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
@@ -13,7 +14,8 @@ public class ValidateWallet : MonoBehaviour
 
     [SerializeField] private UnityEvent ValidStart;
     [SerializeField] private UnityEvent<BigInteger> InvalidStart; //TODO: Consider payload pattern. Gotta consider empty faucet.
-
+    [SerializeField] private bool isValidating = false;
+    
     public class InvalidReason
     {
         public enum Reason
@@ -25,17 +27,28 @@ public class ValidateWallet : MonoBehaviour
         public Reason reason;
         public object data;
     }
-    
-    public void Validate()
+
+    private void Start()
     {
         faucet.OnGetElapsedTime.AddListener(OnGetElapsedTime);
+    }
+
+    private void OnDestroy()
+    {
+        faucet.OnGetElapsedTime.RemoveListener(OnGetElapsedTime);
+    }
+
+    public void Validate()
+    {
+        if (isValidating)
+            return;
+        
         faucet.GetElapsedTime();
+        isValidating = true;
     }
 
     private void OnGetElapsedTime(BigInteger elapsedTime)
     {
-        faucet.OnGetElapsedTime.RemoveListener(OnGetElapsedTime);
-
         //HACK: Get from contract.
         int elapsedSecondsRate = 120;
 
@@ -52,5 +65,7 @@ public class ValidateWallet : MonoBehaviour
             var timeRemaining = elapsedSecondsRate - elapsedTime;
             InvalidStart?.Invoke(timeRemaining);
         }
+
+        isValidating = false;
     }
 }

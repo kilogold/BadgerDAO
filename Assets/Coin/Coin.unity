@@ -5074,7 +5074,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  lengthInSeconds: 60
+  lengthInSeconds: 5
 --- !u!1 &1612396381
 GameObject:
   m_ObjectHideFlags: 0
@@ -6096,7 +6096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
       propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
       propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -6107,6 +6107,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
+      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
       propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 784173866}
@@ -6115,11 +6119,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 142585429}
     - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
+      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1863349324}
+    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
       propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
       propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
+      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
@@ -6131,12 +6143,20 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
+      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: RequestGrant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
       propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
       propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
+      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: Faucet, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
       propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -6152,6 +6172,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
       propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
+      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7046893821712241107, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}

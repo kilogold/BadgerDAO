@@ -125,8 +125,12 @@ contract Faucet
 
         require(transferAmount <= FAUCET_TOKEN.balanceOf(address(this)));
         
-        //TODO:Check for gas         
-        require(FAUCET_TOKEN.transfer(recipient, transferAmount));
+        // TODO:Check for gas.
+
+        if(score > 0)
+        {      
+            require(FAUCET_TOKEN.transfer(recipient, transferAmount));
+        }
         
         participants[recipient]  = block.timestamp;
     }

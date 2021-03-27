@@ -30,10 +30,11 @@ public class Faucet : MonoBehaviour
     public UnityEvent OnCanParticipate_Fail;
     public UnityEvent<string> OnRequestGrant;
 
-    public void RequestGrant(uint score)
+    public void RequestGrant(int score)
     {
-        StartCoroutine(RequestGrantCR(score));
+        StartCoroutine(RequestGrantCR((uint)score));
     }
+    
     public void RequestGrant()
     {
         StartCoroutine(RequestGrantCR(grantRequestAmount));

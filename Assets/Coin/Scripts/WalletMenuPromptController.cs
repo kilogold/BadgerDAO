@@ -20,6 +20,7 @@ public class WalletMenuPromptController : MonoBehaviour
 
     public void NotReadyPrompt(BigInteger timeUntilReady)
     {
+        StopAllCoroutines();
         string message = $"Wait {timeUntilReady.ToString("00")} seconds.";
         StartCoroutine(DisplayPrompt(message, promptDuration));
     }
