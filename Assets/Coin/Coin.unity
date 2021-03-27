@@ -2176,6 +2176,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  isValidating: 0
 --- !u!1 &722556384
 GameObject:
   m_ObjectHideFlags: 0
@@ -5000,6 +5001,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1557614091}
   - component: {fileID: 1557614092}
+  - component: {fileID: 1557614093}
   m_Layer: 0
   m_Name: Timer
   m_TagString: Untagged
@@ -5050,6 +5052,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1557614093}
+        m_TargetAssemblyTypeName: ValidateScore, Assembly-CSharp
+        m_MethodName: Validate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  lengthInSeconds: 5
+--- !u!114 &1557614093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557614090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1539f685f6cb4e268dacceb15e7c543, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnValidScore:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 81632223}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -5062,10 +5092,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1863349324}
-        m_TargetAssemblyTypeName: Faucet, Assembly-CSharp
-        m_MethodName: RequestGrant
-        m_Mode: 1
+  OnInvalidScore:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 784173866}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5074,7 +5107,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  lengthInSeconds: 5
+  score: {fileID: 1863349323}
 --- !u!1 &1612396381
 GameObject:
   m_ObjectHideFlags: 0
@@ -6095,22 +6128,6 @@ PrefabInstance:
       value: Badger
       objectReference: {fileID: 0}
     - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
       propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 784173866}
@@ -6122,66 +6139,6 @@ PrefabInstance:
       propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1863349324}
-    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: RequestGrant
-      objectReference: {fileID: 0}
-    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: Faucet, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7046893821712241107, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
 --- !u!4 &6456439657314355831 stripped
