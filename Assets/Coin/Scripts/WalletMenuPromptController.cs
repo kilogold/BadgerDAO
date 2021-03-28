@@ -18,10 +18,22 @@ public class WalletMenuPromptController : MonoBehaviour
         promptVisual.SetActive(false);
     }
 
-    public void NotReadyPrompt(BigInteger timeUntilReady)
+    public void NotReadyPrompt(ValidateWallet.InvalidStartArgs args)
     {
         StopAllCoroutines();
-        string message = $"Wait {timeUntilReady.ToString("00")} seconds.";
+
+        string message = null;
+        switch (args.code)
+        {
+            case ValidateWallet.InvalidStartArgs.Code.TooSoon:
+                BigInteger value = (BigInteger) args.value;
+                message = $"Wait {value.ToString("00")} seconds.";
+                break;
+            
+            case ValidateWallet.InvalidStartArgs.Code.InvalidAddress:
+                message = "Invalid address.";
+                break;
+        }
         StartCoroutine(DisplayPrompt(message, promptDuration));
     }
 }

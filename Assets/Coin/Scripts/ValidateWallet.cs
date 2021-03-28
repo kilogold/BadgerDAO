@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Numerics;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 /// <summary>
 /// Need to rethink validation on this class.
@@ -13,7 +15,8 @@ public class ValidateWallet : MonoBehaviour
     public Faucet faucet;
 
     [SerializeField] private UnityEvent ValidStart;
-    [SerializeField] private UnityEvent<BigInteger> InvalidStart; //TODO: Consider payload pattern. Gotta consider empty faucet.
+    [SerializeField] private UnityEvent<InvalidStartArgs> InvalidStart; //TODO: Consider payload pattern. Gotta consider empty faucet.
+    [SerializeField] private InputField walletInputField;
     [SerializeField] private bool isValidating = false;
 
     // TODO:
@@ -37,6 +40,14 @@ public class ValidateWallet : MonoBehaviour
     {
         if (isValidating)
             return;
+
+        if (walletInputField.text.Length != 42 || !walletInputField.text.StartsWith("0x", StringComparison.Ordinal))
+        {
+            // TODO: Check that input address is not a Contract address. May require callback pattern refactor.
+            InvalidStart?.Invoke(new InvalidStartArgs(InvalidStartArgs.Code.InvalidAddress, null));
+            return;
+        }
+        
         
         faucet.GetElapsedTime();
         isValidating = true;
@@ -66,9 +77,27 @@ public class ValidateWallet : MonoBehaviour
         else
         {
             var timeRemaining = elapsedSecondsRate - elapsedTime;
-            InvalidStart?.Invoke(timeRemaining);
+            InvalidStart?.Invoke(new InvalidStartArgs(InvalidStartArgs.Code.TooSoon, timeRemaining));
         }
 
         isValidating = false;
+    }
+
+    public class InvalidStartArgs
+    {
+        public enum Code
+        {
+            TooSoon,
+            InvalidAddress,
+        }
+
+        public readonly Code code;
+        public readonly object value;
+
+        public InvalidStartArgs(Code code, object value)
+        {
+            this.code = code;
+            this.value = value;
+        }
     }
 }
