@@ -54,10 +54,16 @@ public class ValidateWallet : MonoBehaviour
 
         if (elapsedTime >= elapsedSecondsRate)
         {
-            // TODO: Check if there is enough balance in the contract.
-            //          We already check this in Solidity code... Check here too?
-            //          Other players could be playing at the same time. What do they get?
-            //          Maybe only allow players if maximum possible gain < contract balance * active players. 
+            // TODO:
+            //       Check if there is enough ERC20 balance in the contract.
+            //       Other players could be playing at the same time, we need to ensure everyone gets the correct payout,
+            //       e.g. payout transaction is not reverted due to lack of funds.
+            // Solution:
+            //       Scan the mempool for pending relevant transactions using https://www.blocknative.com/.
+            //       This way, we can calculate if there are enough funds for a game session based on
+            //       [contract amount] - [collective transaction total from all pending payouts].
+            // Bonus:
+            //       We can prevent an request spam attack where the same user plays multiple rounds in the same block. 
             ValidStart?.Invoke();
         }
         else

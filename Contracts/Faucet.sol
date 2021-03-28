@@ -95,17 +95,17 @@ contract Standard_Token is Token {
     }
 }
 
-// My first contract is a faucet! :D
 contract Faucet 
 {
-    Token constant internal FAUCET_TOKEN = Standard_Token(0xFab46E002BbF0b4509813474841E0716E6730136);
+    Token immutable internal FAUCET_TOKEN;
 
     mapping (address => uint256) private participants;
     uint256 private participantRetryTime = 3 seconds;
     address private authority;
     
-    constructor(uint256 retryAmount) payable
+    constructor(uint256 retryAmount, address tokenContract) payable
     {
+        FAUCET_TOKEN = Standard_Token(tokenContract);
         participantRetryTime = retryAmount;
         authority = msg.sender;
     }
@@ -125,13 +125,11 @@ contract Faucet
 
         require(transferAmount <= FAUCET_TOKEN.balanceOf(address(this)));
         
-        // TODO:Check for gas.
-
         if(score > 0)
         {      
             require(FAUCET_TOKEN.transfer(recipient, transferAmount));
         }
-        
+
         participants[recipient]  = block.timestamp;
     }
     
