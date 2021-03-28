@@ -42,18 +42,26 @@ namespace Contracts.Contracts.Faucet
             ContractHandler = web3.Eth.GetContractHandler(contractAddress);
         }
 
-        public Task<bool> CanParticipateQueryAsync(CanParticipateFunction canParticipateFunction, BlockParameter blockParameter = null)
+        public Task<string> FAUCET_TOKENQueryAsync(FAUCET_TOKENFunction fAUCET_TOKENFunction, BlockParameter blockParameter = null)
         {
-            return ContractHandler.QueryAsync<CanParticipateFunction, bool>(canParticipateFunction, blockParameter);
+            return ContractHandler.QueryAsync<FAUCET_TOKENFunction, string>(fAUCET_TOKENFunction, blockParameter);
         }
 
         
-        public Task<bool> CanParticipateQueryAsync(string participant, BlockParameter blockParameter = null)
+        public Task<string> FAUCET_TOKENQueryAsync(BlockParameter blockParameter = null)
         {
-            var canParticipateFunction = new CanParticipateFunction();
-                canParticipateFunction.Participant = participant;
-            
-            return ContractHandler.QueryAsync<CanParticipateFunction, bool>(canParticipateFunction, blockParameter);
+            return ContractHandler.QueryAsync<FAUCET_TOKENFunction, string>(null, blockParameter);
+        }
+
+        public Task<string> AuthorityQueryAsync(AuthorityFunction authorityFunction, BlockParameter blockParameter = null)
+        {
+            return ContractHandler.QueryAsync<AuthorityFunction, string>(authorityFunction, blockParameter);
+        }
+
+        
+        public Task<string> AuthorityQueryAsync(BlockParameter blockParameter = null)
+        {
+            return ContractHandler.QueryAsync<AuthorityFunction, string>(null, blockParameter);
         }
 
         public Task<BigInteger> GetElapsedTimeQueryAsync(GetElapsedTimeFunction getElapsedTimeFunction, BlockParameter blockParameter = null)
@@ -80,22 +88,46 @@ namespace Contracts.Contracts.Faucet
              return ContractHandler.SendRequestAndWaitForReceiptAsync(grantFunction, cancellationToken);
         }
 
-        public Task<string> GrantRequestAsync(string recipient, BigInteger score)
+        public Task<string> GrantRequestAsync(string recipient, byte score, byte fromTotal)
         {
             var grantFunction = new GrantFunction();
                 grantFunction.Recipient = recipient;
                 grantFunction.Score = score;
+                grantFunction.FromTotal = fromTotal;
             
              return ContractHandler.SendRequestAsync(grantFunction);
         }
 
-        public Task<TransactionReceipt> GrantRequestAndWaitForReceiptAsync(string recipient, BigInteger score, CancellationTokenSource cancellationToken = null)
+        public Task<TransactionReceipt> GrantRequestAndWaitForReceiptAsync(string recipient, byte score, byte fromTotal, CancellationTokenSource cancellationToken = null)
         {
             var grantFunction = new GrantFunction();
                 grantFunction.Recipient = recipient;
                 grantFunction.Score = score;
+                grantFunction.FromTotal = fromTotal;
             
              return ContractHandler.SendRequestAndWaitForReceiptAsync(grantFunction, cancellationToken);
+        }
+
+        public Task<BigInteger> MaxDistributionPerGrantQueryAsync(MaxDistributionPerGrantFunction maxDistributionPerGrantFunction, BlockParameter blockParameter = null)
+        {
+            return ContractHandler.QueryAsync<MaxDistributionPerGrantFunction, BigInteger>(maxDistributionPerGrantFunction, blockParameter);
+        }
+
+        
+        public Task<BigInteger> MaxDistributionPerGrantQueryAsync(BlockParameter blockParameter = null)
+        {
+            return ContractHandler.QueryAsync<MaxDistributionPerGrantFunction, BigInteger>(null, blockParameter);
+        }
+
+        public Task<BigInteger> ParticipantRetryTimeQueryAsync(ParticipantRetryTimeFunction participantRetryTimeFunction, BlockParameter blockParameter = null)
+        {
+            return ContractHandler.QueryAsync<ParticipantRetryTimeFunction, BigInteger>(participantRetryTimeFunction, blockParameter);
+        }
+
+        
+        public Task<BigInteger> ParticipantRetryTimeQueryAsync(BlockParameter blockParameter = null)
+        {
+            return ContractHandler.QueryAsync<ParticipantRetryTimeFunction, BigInteger>(null, blockParameter);
         }
     }
 }

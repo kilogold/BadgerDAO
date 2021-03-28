@@ -69,11 +69,11 @@ contract Standard_Token is Token {
     }
 
     function transferFrom(address _from, address _to, uint256 _value) public override returns (bool success) {
-        uint256 allowance = allowed[_from][msg.sender];
-        require(balances[_from] >= _value && allowance >= _value, "token balance or allowance is lower than amount requested");
+        uint256 allowance_local = allowed[_from][msg.sender];
+        require(balances[_from] >= _value && allowance_local >= _value, "token balance or allowance is lower than amount requested");
         balances[_to] += _value;
         balances[_from] -= _value;
-        if (allowance < MAX_UINT256) {
+        if (allowance_local < MAX_UINT256) {
             allowed[_from][msg.sender] -= _value;
         }
         emit Transfer(_from, _to, _value); //solhint-disable-line indent, no-unused-vars
@@ -97,33 +97,39 @@ contract Standard_Token is Token {
 
 contract Faucet 
 {
-    Token immutable internal FAUCET_TOKEN;
-
-    mapping (address => uint256) private participants;
-    uint256 private participantRetryTime = 3 seconds;
-    address private authority;
+    Token immutable public FAUCET_TOKEN;
+    uint256 immutable public participantRetryTime;
+    uint256 immutable public maxDistributionPerGrant;
+    address immutable public authority;
     
-    constructor(uint256 retryAmount, address tokenContract) payable
+    mapping (address => uint256) private participants;
+    
+    constructor(uint256 participantRetryTimeIn, uint256 maxDistributionPerGrantIn, address tokenContract)
     {
         FAUCET_TOKEN = Standard_Token(tokenContract);
-        participantRetryTime = retryAmount;
+        participantRetryTime = participantRetryTimeIn;
+        maxDistributionPerGrant = maxDistributionPerGrantIn;
         authority = msg.sender;
     }
     
-    function calculatePayout(uint256 score) private pure returns (uint256)
+    function calculatePayout(uint8 score, uint8 fromTotal) private view returns (uint256)
     {
-        return score * (1000000 gwei);
+        return (score * maxDistributionPerGrant) / fromTotal;
     }
 
-    function grant(address recipient, uint score) public
+    function grant(address recipient, uint8 score, uint8 fromTotal) public
     {
         require(msg.sender == authority);
 
-        require(canParticipate(recipient));
+        require(getElapsedTime(recipient) > participantRetryTime, "Retry cooldown not met.");
 
-        uint256 transferAmount = calculatePayout(score);
+        uint256 transferAmount = calculatePayout(score, fromTotal);
 
-        require(transferAmount <= FAUCET_TOKEN.balanceOf(address(this)));
+        uint256 currentBalance = FAUCET_TOKEN.balanceOf(address(this));
+        
+        require(currentBalance > 0, "Contract has zero token balance");
+        
+        require(transferAmount <= currentBalance, "Not enough balance available in the contract.");
         
         if(score > 0)
         {      
@@ -131,11 +137,6 @@ contract Faucet
         }
 
         participants[recipient]  = block.timestamp;
-    }
-    
-    function canParticipate(address participant) public view returns (bool)
-    {
-        return(participants[participant] + participantRetryTime < block.timestamp);
     }
     
     function getElapsedTime(address participant) public view returns (uint256)
