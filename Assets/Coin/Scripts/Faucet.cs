@@ -64,9 +64,9 @@ public class Faucet : MonoBehaviour
 #if !UNITY_EDITOR && UNITY_WEBGL
         OpenNewTab(url);
         return;
-#endif
-        
+#else
         Application.OpenURL(url);
+#endif
     }
     
     public IEnumerator GetElapsedRateCR()
