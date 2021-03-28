@@ -189,6 +189,18 @@ MonoBehaviour:
           m_StringArgument: Pump
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1863349323}
+        m_TargetAssemblyTypeName: ScoreKeep, Assembly-CSharp
+        m_MethodName: IncrementTotal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &36340305
 GameObject:
   m_ObjectHideFlags: 0
@@ -2208,7 +2220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: -0.05
-  renderer: {fileID: 722556386}
+  spriteRenderer: {fileID: 722556386}
 --- !u!212 &722556386
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3385,7 +3397,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -5121,8 +5133,8 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1863349324}
         m_TargetAssemblyTypeName: Faucet, Assembly-CSharp
-        m_MethodName: RequestGrant
-        m_Mode: 3
+        m_MethodName: RequestZeroGrant
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5865,6 +5877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b70bfe53cef8c4a6f84dd37bfe3625c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalScore: 0
   currentScore: 0
   faucet: {fileID: 1863349324}
 --- !u!114 &1863349324
@@ -5880,19 +5893,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   networkUrl: https://ropsten.infura.io/v3/e95812f105a340cda6bfd2c67bc22f69
-  contractAddress: 0xb61CAA4957FB9BB54415A75056E78b2951042fdC
+  contractAddress: 0xa880C88249FA893271caAa46181f371Bb5875F1C
   gasWalletAddress: 0xa4B8198E42268cf870297c77174318F0C6A43913
   gasWalletAddressPrivate: cdd4df549e0dda6ab7511c55cfa74f105791f1fd44fb6755a4a4349f034061c9
   grantTransactionHash: 
   inputWalletAddress: {fileID: 1429559330}
-  grantRequestAmount: 0
+  grantRequestCurrentScore: 0
+  grantRequestTotalScore: 0
+  OnGetElapsedRate:
+    m_PersistentCalls:
+      m_Calls: []
   OnGetElapsedTime:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCanParticipate_Success:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCanParticipate_Fail:
     m_PersistentCalls:
       m_Calls: []
   OnRequestGrant:
@@ -6152,6 +6163,10 @@ PrefabInstance:
       value: Badger
       objectReference: {fileID: 0}
     - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
+      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
       propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 784173866}
@@ -6163,6 +6178,10 @@ PrefabInstance:
       propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1863349324}
+    - target: {fileID: 6201904237817505005, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
+      propertyPath: OnOutsideBounds.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: RequestZeroGrant
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a4d34d335c144397803743c9ff01ebe, type: 3}
 --- !u!4 &6456439657314355831 stripped

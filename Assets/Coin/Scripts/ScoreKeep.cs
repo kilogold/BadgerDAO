@@ -4,21 +4,27 @@ using UnityEngine;
 
 public class ScoreKeep : MonoBehaviour
 {
-    [SerializeField] uint currentScore;
+    [SerializeField] byte totalScore;
+    [SerializeField] byte currentScore;
     [SerializeField] Faucet faucet;
     
     public uint CurrentScore => currentScore;
 
     public void Reset()
     {
+        totalScore = 0;
         currentScore = 0;
-        faucet.grantRequestAmount = 0;
+        faucet.grantRequestCurrentScore = 0;
     }
 
     public void IncrementScore()
     {
-        currentScore = CurrentScore + 1;
-        faucet.grantRequestAmount = currentScore;
+        faucet.grantRequestCurrentScore = ++currentScore;
+    }
+
+    public void IncrementTotal()
+    {
+        faucet.grantRequestTotalScore = ++totalScore;
     }
     
 }

@@ -7,19 +7,19 @@ using Random = UnityEngine.Random;
 public class ScrollingTexture : MonoBehaviour
 {
     public float velocity;
-    public SpriteRenderer renderer;
+    public SpriteRenderer spriteRenderer;
 
     private const float MAX = 10.12f;
     private const float MIN = 5.0f;
 
     void Start()
     {
-        renderer.size = new Vector2(Random.Range(MIN,MAX), renderer.size.y);
+        spriteRenderer.size = new Vector2(Random.Range(MIN,MAX), spriteRenderer.size.y);
     }
 
     void Update()
     {
-        float newOffset = renderer.size.x + velocity * Time.deltaTime;
+        float newOffset = spriteRenderer.size.x + velocity * Time.deltaTime;
 
         if (newOffset > MAX)
             newOffset = MIN + (newOffset - MAX);
@@ -27,6 +27,6 @@ public class ScrollingTexture : MonoBehaviour
             newOffset = MAX - (MIN - newOffset);
         
         
-        renderer.size = new Vector2(newOffset, renderer.size.y);
+        spriteRenderer.size = new Vector2(newOffset, spriteRenderer.size.y);
     }
 }

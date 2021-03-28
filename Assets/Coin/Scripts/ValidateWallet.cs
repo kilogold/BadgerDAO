@@ -15,27 +15,22 @@ public class ValidateWallet : MonoBehaviour
     [SerializeField] private UnityEvent ValidStart;
     [SerializeField] private UnityEvent<BigInteger> InvalidStart; //TODO: Consider payload pattern. Gotta consider empty faucet.
     [SerializeField] private bool isValidating = false;
-    
-    public class InvalidReason
-    {
-        public enum Reason
-        {
-            TooSoon,
-            FaucetDepleted,
-        }
 
-        public Reason reason;
-        public object data;
-    }
+    // TODO:
+    // Ensure we can conduct wallet validation only after having initialized rate via Smart contract query.
+    private BigInteger elapsedSecondsRate = BigInteger.MinusOne;
 
     private void Start()
     {
         faucet.OnGetElapsedTime.AddListener(OnGetElapsedTime);
+        faucet.OnGetElapsedRate.AddListener(OnGetElapsedRate);
+        faucet.GetElapsedRate();
     }
-
+    
     private void OnDestroy()
     {
         faucet.OnGetElapsedTime.RemoveListener(OnGetElapsedTime);
+        faucet.OnGetElapsedTime.RemoveListener(OnGetElapsedRate);
     }
 
     public void Validate()
@@ -46,12 +41,14 @@ public class ValidateWallet : MonoBehaviour
         faucet.GetElapsedTime();
         isValidating = true;
     }
+    
+    private void OnGetElapsedRate(BigInteger elapsedRate)
+    {
+        elapsedSecondsRate = elapsedRate;
+    }
 
     private void OnGetElapsedTime(BigInteger elapsedTime)
     {
-        //HACK: Get from contract.
-        int elapsedSecondsRate = 120;
-
         if (elapsedTime >= elapsedSecondsRate)
         {
             // TODO:

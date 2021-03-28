@@ -27,32 +27,35 @@ public class Faucet : MonoBehaviour
     // User Wallet
     [SerializeField] InputField inputWalletAddress;
     
-    public uint grantRequestAmount;
+    public byte grantRequestCurrentScore;
+    public byte grantRequestTotalScore;
+
+    public UnityEvent<BigInteger> OnGetElapsedRate;
     public UnityEvent<BigInteger> OnGetElapsedTime;
-    public UnityEvent OnCanParticipate_Success;
-    public UnityEvent OnCanParticipate_Fail;
     public UnityEvent<string> OnRequestGrant;
 
-    public void RequestGrant(int score)
+    public void RequestZeroGrant()
     {
-        StartCoroutine(RequestGrantCR((uint)score));
+        // Emulate zero-score. Ensure total score is non-zero
+        // in case of downstream divide-by-zero exceptions.
+        StartCoroutine(RequestGrantCR(0,1));
     }
     
     public void RequestGrant()
     {
-        StartCoroutine(RequestGrantCR(grantRequestAmount));
+        StartCoroutine(RequestGrantCR(grantRequestCurrentScore, grantRequestTotalScore));
     }
 
     public void GetElapsedTime()
     {
         StartCoroutine(GetElapsedTimeCR());
     }
-
-    public void CanParticipate()
-    {
-        StartCoroutine(CanParticipateCR());
-    }
     
+    public void GetElapsedRate()
+    {
+        StartCoroutine(GetElapsedRateCR());
+    }
+
     public void LaunchEtherscan()
     {
         string url = "https://ropsten.etherscan.io/tx/" + grantTransactionHash;
@@ -65,21 +68,20 @@ public class Faucet : MonoBehaviour
         
         Application.OpenURL(url);
     }
-
-
-    private IEnumerator CanParticipateCR()
+    
+    public IEnumerator GetElapsedRateCR()
     {
-        var queryRequest = new QueryUnityRequest<CanParticipateFunction, CanParticipateOutputDTO>(networkUrl, contractAddress);
-        yield return queryRequest.Query(new CanParticipateFunction() {FromAddress = gasWalletAddress, Participant = inputWalletAddress.text}, contractAddress);
-        
-        if(queryRequest.Result.ReturnValue1)
-            OnCanParticipate_Success?.Invoke();
-        else
-            OnCanParticipate_Fail?.Invoke();
+        Debug.Log("Creating Elapsed Rate");
+        var queryRequest = new QueryUnityRequest<ParticipantRetryTimeFunction, ParticipantRetryTimeOutputDTO>(networkUrl, contractAddress);
+
+        Debug.Log("Executing Elapsed Rate Query");
+        yield return queryRequest.Query(new ParticipantRetryTimeFunction(), contractAddress);
+
+        Debug.Log($"Invoking Elapsed Rate Query Callback With Value: {queryRequest.Result.ReturnValue1}");
+        OnGetElapsedRate?.Invoke(queryRequest.Result.ReturnValue1);
     }
 
-
-    private IEnumerator GetElapsedTimeCR()
+    public IEnumerator GetElapsedTimeCR()
     {
         Debug.Log("Creating ElapsedTimeQuery");
         var queryRequest = new QueryUnityRequest<GetElapsedTimeFunction, GetElapsedTimeOutputDTO>(networkUrl, contractAddress);
@@ -87,18 +89,19 @@ public class Faucet : MonoBehaviour
         Debug.Log("Executing ElapsedTimeQuery");
         yield return queryRequest.Query(new GetElapsedTimeFunction() { FromAddress = gasWalletAddress, Participant = inputWalletAddress.text}, contractAddress);
 
-        Debug.Log("Invoking ElapsedTimeQuery Callback");
+        Debug.Log($"Invoking ElapsedTimeQuery Callback with value: {queryRequest.Result.ReturnValue1}");
         OnGetElapsedTime?.Invoke(queryRequest.Result.ReturnValue1);
     }
 
-    private IEnumerator RequestGrantCR(uint score)
+    public IEnumerator RequestGrantCR(byte score, byte fromTotal)
     {
         var transactionTransferRequest = new TransactionSignedUnityRequest(networkUrl, gasWalletAddressPrivate);
         var transactionMessage = new GrantFunction
         {
             FromAddress = gasWalletAddress,
             Recipient = inputWalletAddress.text,
-            Score = score
+            Score = score,
+            FromTotal = fromTotal
         };
 
         yield return transactionTransferRequest.SignAndSendTransaction(transactionMessage, contractAddress);
