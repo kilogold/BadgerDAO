@@ -8,6 +8,8 @@ This is an entry for [Gitcoin Round 9: Badger Honey Pot](https://gitcoin.co/issu
 
 **Playable**: http://kraniumtivity.com/Extra/BadgerDAO/
 
+**Full Gameplay**: https://youtu.be/VAFihQhIPsw
+
 ## Summary
 The Badger Lucky Faucet (BLF) is a mini-game template that can be used to add gamification to the classic boring faucet. With BLF, we can make claiming tokens competitive, cooperative, or anything in between (but mostly fun!). The BLF template provides an initial sample game where players must try catching coins falling from the clouds before time runs out, all while running across the edge of a cliff without falling off. Successful badgers will claim token amounts based on their performance. Unfortunate badgers will forfeit any collected coins. The coins represent a configurable amount of ERC20 tokens granted to the players wallet upon payout.
 
@@ -56,6 +58,9 @@ Once the smart contract has been manually deployed, the game must be built with 
 
 
 ## Limitations / Pending Improvements
+
+### Game only runs on Chrome
+I'm not exactly a web dev so I had to rely on miscelaneous tutorials to get the WebGL properly bootstrapped with Web3 plugins such as Metamask. Brave Browser doesn't work, for example. The Metamask button on the start screen has only worked when running on Chrome with Metamask being the sole Web3 provider installed. More details on this issue to come. 
 
 ### Instant Replay Vulnerability
 After playing a session (win or lose), the player can bypass the retry delay period simply by reloading the page immediately. A user could do this consecutively to illegitimately boost their rewards, potentially draining the faucet. This happens because time tracking for each player is done via block timestamps in Solidity. The delay period for any player is only updated on the next block. The solution here is to either:
