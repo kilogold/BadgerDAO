@@ -34,7 +34,7 @@ The Unity project is organized so that you can replace the existing game activit
 ## Technical Overview
 
 ### Deployment Layout
-![Alt text here](Diagrams.svg)
+![Alt text here](Documentation/Diagrams.svg)
 
 
 ### Token Grant Calculation
