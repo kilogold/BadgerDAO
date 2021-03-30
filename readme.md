@@ -10,7 +10,7 @@ This is an entry for [Gitcoin Round 9: Badger Honey Pot](https://gitcoin.co/issu
 
 **Full Gameplay**: https://youtu.be/VAFihQhIPsw
 
-**Faucet Contract**: [0x47716f832ee08f6508a4f6ae2f3a50984cc85208](https://ropsten.etherscan.io/address/0x47716f832ee08f6508a4f6ae2f3a50984cc85208) ([source](Contracts/Faucet.sol))
+**Faucet Contract**: [0xa880C88249FA893271caAa46181f371Bb5875F1C](https://ropsten.etherscan.io/address/0xa880C88249FA893271caAa46181f371Bb5875F1C) ([source](Contracts/Faucet.sol))
 
 ## Summary
 The Badger Lucky Faucet (BLF) is a mini-game template that can be used to add gamification to the classic boring faucet. With BLF, we can make claiming tokens competitive, cooperative, or anything in between (but mostly fun!). The BLF template provides an initial sample game where players must try catching coins falling from the clouds before time runs out, all while running across the edge of a cliff without falling off. Successful badgers will claim token amounts based on their performance. Unfortunate badgers will forfeit any collected coins. The coins represent a configurable amount of ERC20 tokens granted to the players wallet upon payout.
