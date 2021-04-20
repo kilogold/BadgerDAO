@@ -3,7 +3,7 @@
 // Version of Solidity compiler this program was written for
 pragma solidity ^0.8.2;
 
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol";
+import "openzeppelin-contracts/contracts/access/Ownable.sol"; 
 
 contract Faucet is Ownable
 {
@@ -12,13 +12,20 @@ contract Faucet is Ownable
 
     mapping (address => uint256) private participants;
     
+    event Funding(string scenario, uint256 amount);
+    
+    receive() external payable
+    {
+        // Allow contract to receive award funds.
+    }
+    
     constructor(uint256 participantRetryTimeIn, uint256 maxDistributionPerGrantIn) payable
     {
         participantRetryTime = participantRetryTimeIn;
         maxDistributionPerGrant = maxDistributionPerGrantIn;
     }
     
-    function calculatePayout(uint8 score, uint8 fromTotal) private view returns (uint256)
+    function calculatePayout(uint8 score, uint8 fromTotal) public view returns (uint256)
     {
         return (score * maxDistributionPerGrant) / fromTotal;
     }
@@ -46,5 +53,11 @@ contract Faucet is Ownable
     function getElapsedTime(address participant) public view returns (uint256)
     {
         return(block.timestamp - participants[participant]);
+    }
+    
+    function recoverFunds() public onlyOwner
+    {
+        emit Funding("Contract drained and sent to contract owner.", address(this).balance);
+        payable(address(msg.sender)).transfer(address(this).balance);
     }
 }
