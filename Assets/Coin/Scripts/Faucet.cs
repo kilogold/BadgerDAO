@@ -13,8 +13,8 @@ public class Faucet : MonoBehaviour
 {
     [DllImport("__Internal")]
     private static extern void OpenNewTab(string url);
-    
-    [SerializeField] string networkUrl = "https://ropsten.infura.io/v3/e95812f105a340cda6bfd2c67bc22f69";
+
+    [SerializeField] string networkUrl;
 
     // Faucet address
     [SerializeField] string contractAddress;
@@ -58,7 +58,7 @@ public class Faucet : MonoBehaviour
 
     public void LaunchEtherscan()
     {
-        string url = "https://ropsten.etherscan.io/tx/" + grantTransactionHash;
+        string url = "https://testnet.bscscan.com/tx/" + grantTransactionHash;
         Debug.Log("Opening URL: "+ url);
         
 #if !UNITY_EDITOR && UNITY_WEBGL
