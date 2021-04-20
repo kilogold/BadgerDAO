@@ -6349,7 +6349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   networkUrl: https://data-seed-prebsc-1-s1.binance.org:8545/
-  contractAddress: 0x977b7aFf64B7FB4E848b18613a9E39F02Cb2f2e2
+  contractAddress: 0x05c1c240934ac53c49970e003963d1eEaFBd8D33
   gasWalletAddress: 0xa4B8198E42268cf870297c77174318F0C6A43913
   gasWalletAddressPrivate: cdd4df549e0dda6ab7511c55cfa74f105791f1fd44fb6755a4a4349f034061c9
   grantTransactionHash: 
