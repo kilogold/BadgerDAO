@@ -3,10 +3,12 @@
 // Version of Solidity compiler this program was written for
 pragma solidity ^0.8.2;
 
-import "openzeppelin-contracts/contracts/access/Ownable.sol"; 
+import "openzeppelin-contracts/contracts/access/Ownable.sol";
+import "WalletValidator.sol";
 
 contract Faucet is Ownable
 {
+    address[] public validators;
     uint256 immutable public participantRetryTime;
     uint256 immutable public maxDistributionPerGrant;
 
@@ -19,10 +21,16 @@ contract Faucet is Ownable
         // Allow contract to receive award funds.
     }
     
-    constructor(uint256 participantRetryTimeIn, uint256 maxDistributionPerGrantIn) payable
+    constructor(uint256 participantRetryTimeIn, uint256 maxDistributionPerGrantIn, address[] memory inputValidators) payable
     {
         participantRetryTime = participantRetryTimeIn;
         maxDistributionPerGrant = maxDistributionPerGrantIn;
+        configureValidators(inputValidators);
+    }
+    
+    function configureValidators(address[] memory inputValidators) public onlyOwner
+    {
+        validators = inputValidators;
     }
     
     function calculatePayout(uint8 score, uint8 fromTotal) public view returns (uint256)
@@ -32,6 +40,8 @@ contract Faucet is Ownable
 
     function grant(address payable recipient, uint8 score, uint8 fromTotal) public onlyOwner
     {
+        validate(recipient);
+        
         require(getElapsedTime(recipient) > participantRetryTime, "Retry cooldown not met.");
 
         uint256 transferAmount = calculatePayout(score, fromTotal);
@@ -48,6 +58,15 @@ contract Faucet is Ownable
         }
 
         participants[recipient]  = block.timestamp;
+    }
+    
+    function validate(address recipient) view public
+    {
+        for(uint8 i = 0; i < validators.length; ++i)
+        {
+            WalletValidator val = WalletValidator(validators[i]);
+            require(val.Validate(recipient), "Recipient does not qualify");
+        }
     }
     
     function getElapsedTime(address participant) public view returns (uint256)
