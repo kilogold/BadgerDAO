@@ -1,0 +1,45 @@
+import pytest
+import brownie
+from brownie import run, accounts, Faucet, ERC20PresetFixedSupply
+
+@pytest.fixture(scope="module", autouse=True)
+def deploy(module_isolation):
+    run('deployment')
+    wltBadgerTeam = accounts[0]
+    wltUserA = accounts[1]
+    wltUserB = accounts[2]
+    ctrFaucet = Faucet[0]
+    ctrBadgerLpToken = ERC20PresetFixedSupply[0]
+
+
+def test_only_owner_can_modify_validators(fn_isolation):
+    wltBadgerTeam = accounts[0]
+    wltUserA = accounts[1]
+    ctrFaucet = Faucet[0]
+
+    # User does not qualify
+    with brownie.reverts("Recipient does not qualify"):
+        ctrFaucet.grant(wltUserA, 10, 10, {'from' : wltBadgerTeam})
+
+    # User attempts to disable validation, but fails because not the owner
+    with brownie.reverts("Ownable: caller is not the owner"):
+        ctrFaucet.configureValidators.transact((), {'from' : wltUserA})
+
+    # Owner updates qualifications via validator change.
+    ctrFaucet.configureValidators.transact((), {'from' : wltBadgerTeam})
+
+def test_owner_disable_validators(fn_isolation):
+    wltBadgerTeam = accounts[0]
+    wltUserA = accounts[1]
+    ctrFaucet = Faucet[0]
+
+    # User does not qualify
+    with brownie.reverts("Recipient does not qualify"):
+        ctrFaucet.grant(wltUserA, 10, 10, {'from' : wltBadgerTeam})
+
+    # Owner disables qualifications via validator change.
+    ctrFaucet.configureValidators.transact((), {'from' : wltBadgerTeam})
+
+    # User now receives grant.
+    ctrFaucet.grant(wltUserA, 10, 10, {'from' : wltBadgerTeam})
+
