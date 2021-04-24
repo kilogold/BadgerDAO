@@ -1,6 +1,6 @@
 import pytest
 import brownie
-from brownie import run, accounts, Faucet, ERC20PresetFixedSupply, TokenHolderThresholdValidator
+from brownie import run, accounts, Faucet, BrownieWrap_Token, TokenHolderThresholdValidator
 
 @pytest.fixture(scope="module", autouse=True)
 def deploy(module_isolation):
@@ -9,7 +9,7 @@ def deploy(module_isolation):
     wltUserA = accounts[1]
     wltUserB = accounts[2]
     ctrFaucet = Faucet[0]
-    ctrBadgerLpToken = ERC20PresetFixedSupply[0]
+    ctrBadgerLpToken = BrownieWrap_Token[0]
 
 
 def test_only_owner_can_modify_validators(fn_isolation):
@@ -47,7 +47,7 @@ def test_owner_update_validators(fn_isolation):
     wltBadgerTeam = accounts[0]
     wltUserA = accounts[1]
     ctrFaucet = Faucet[0]
-    ctrBadgerLpToken = ERC20PresetFixedSupply[0]
+    ctrBadgerLpToken = BrownieWrap_Token[0]
 
     # UserA does not qualify
     with brownie.reverts("Recipient does not qualify"):

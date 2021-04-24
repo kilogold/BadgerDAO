@@ -1,6 +1,6 @@
 import pytest
 import brownie
-from brownie import run, accounts, Faucet, ERC20PresetFixedSupply
+from brownie import run, accounts, Faucet, BrownieWrap_Token
 
 @pytest.fixture(scope="module", autouse=True)
 def deploy(module_isolation):
@@ -9,7 +9,7 @@ def deploy(module_isolation):
     wltUserA = accounts[1]
     wltUserB = accounts[2]
     ctrFaucet = Faucet[0]
-    ctrBadgerLpToken = ERC20PresetFixedSupply[0]
+    ctrBadgerLpToken = BrownieWrap_Token[0]
 
 def test_deployment_account_balance_consumed():
     wltBadgerTeam = accounts[0]
@@ -34,7 +34,7 @@ def test_only_qualified_wallets_receive_grant(deploy):
     wltUserA = accounts[1]
     wltUserB = accounts[2]
     ctrFaucet = Faucet[0]
-    ctrBadgerLpToken = ERC20PresetFixedSupply[0]
+    ctrBadgerLpToken = BrownieWrap_Token[0]
 
     with brownie.reverts("Recipient does not qualify"):
         ctrFaucet.grant(wltUserA, 10, 10, {'from' : wltBadgerTeam})

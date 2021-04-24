@@ -4,7 +4,19 @@
 pragma solidity ^0.8.2;
 
 import "../interfaces/WalletValidator.sol";
-import "./openzeppelin-contracts/contracts/token/ERC20/IERC20.sol"; 
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol"; 
+import "@openzeppelin/contracts/token/ERC20/presets/ERC20PresetFixedSupply.sol";
+
+contract MockToken is ERC20PresetFixedSupply
+{
+        constructor(
+        string memory name,
+        string memory symbol,
+        uint256 initialSupply,
+        address owner
+    ) ERC20PresetFixedSupply(name, symbol, initialSupply, owner) {
+    }
+}
 
 contract TokenHolderThresholdValidator is WalletValidator
 {

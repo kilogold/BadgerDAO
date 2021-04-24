@@ -3,7 +3,7 @@
 // Version of Solidity compiler this program was written for
 pragma solidity ^0.8.2;
 
-import "./openzeppelin-contracts/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 import "../interfaces/WalletValidator.sol";
 
 contract Faucet is Ownable

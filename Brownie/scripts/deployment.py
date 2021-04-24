@@ -1,14 +1,9 @@
-from brownie import accounts, ERC20PresetFixedSupply, TokenHolderThresholdValidator, Faucet, Wei
-# p = project.load("/Users/kelvin.bonilla/MyBrownie", name="BrownieProj")
-# p.load_config()
-# from brownie.project.BrownieProj import *
-# network.connect('development')
-
+from brownie import accounts, BrownieWrap_Token, TokenHolderThresholdValidator, Faucet, Wei
 
 def main():
     wltBadgerTeam = accounts[0]   
 
-    ctrBadgerLpToken = ERC20PresetFixedSupply.deploy("Sett Vault Badger LP", "bBadger", Wei("180000 ether"), wltBadgerTeam, {'from': wltBadgerTeam})
+    ctrBadgerLpToken = BrownieWrap_Token.deploy("Sett Vault Badger LP", "bBadger", Wei("180000 ether"), wltBadgerTeam, {'from': wltBadgerTeam})
     
     ctrBadgerHolderValidation = TokenHolderThresholdValidator.deploy(ctrBadgerLpToken.address, 10, 1, {'from': wltBadgerTeam})
     
