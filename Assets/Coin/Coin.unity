@@ -2167,8 +2167,10 @@ GameObject:
   - component: {fileID: 708477821}
   - component: {fileID: 708477820}
   - component: {fileID: 708477824}
+  - component: {fileID: 708477823}
+  - component: {fileID: 708477825}
   m_Layer: 5
-  m_Name: Button
+  m_Name: GoButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2238,8 +2240,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 708477824}
-        m_TargetAssemblyTypeName: ValidateWallet, Assembly-CSharp
+      - m_Target: {fileID: 708477825}
+        m_TargetAssemblyTypeName: WalletValidationCoordinator, Assembly-CSharp
         m_MethodName: Validate
         m_Mode: 1
         m_Arguments:
@@ -2288,6 +2290,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708477818}
   m_CullTransparentMesh: 1
+--- !u!114 &708477823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708477818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ac118af9a6cf424ebc8717f6dd50800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crossChainContractEndpoints:
+    reorderableList:
+      canAdd: 1
+      canRemove: 1
+      draggable: 1
+      expandable: 1
+      multipleSelection: 1
+      isExpanded: 1
+      label:
+        m_Text: Keys
+        m_Image: {fileID: 0}
+        m_Tooltip: 
+      headerHeight: 18
+      footerHeight: 13
+      slideEasing: 0.15
+      verticalSpacing: 2
+      showDefaultBackground: 1
+      elementDisplayType: 0
+      elementNameProperty: 
+      elementNameOverride: 
+      elementIcon: {fileID: 0}
+    reqReferences: {fileID: 0}
+    isExpanded: 1
+    _keyValues:
+    - https://ropsten.infura.io/v3/a720bbacf18f4b3d9fbb72ebe705c67e
+    - https://data-seed-prebsc-1-s1.binance.org:8545/
+    _keys:
+    - https://ropsten.infura.io/v3/a720bbacf18f4b3d9fbb72ebe705c67e
+    - https://data-seed-prebsc-1-s1.binance.org:8545/
+    _values:
+    - collection:
+      - 0x32fC83Aa76623D6839A9DCDCfCF47Ad7Ea9410F2
+    - collection:
+      - 0x260E67541BD9F4Efa80B1A9445BcaBC0C94Bd7A4
+  faucet: {fileID: 1863349324}
 --- !u!114 &708477824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2300,22 +2349,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2f5fc7ba6f4f4e5d9e2ea16c8815205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faucet: {fileID: 1863349324}
+  walletInputField: {fileID: 1429559330}
+--- !u!114 &708477825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708477818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c95c115b492b48788e0f406fdb9ecde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offChainValidation: {fileID: 708477824}
+  onChainValidation: {fileID: 708477823}
   ValidStart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 142585429}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 502295723}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -2328,17 +2379,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1763178633}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
+      - m_Target: {fileID: 142585429}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   InvalidStart:
     m_PersistentCalls:
@@ -2355,20 +2406,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 369820111}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  walletInputField: {fileID: 1429559330}
-  isValidating: 0
+  walletAddressInputField: {fileID: 1429559330}
+  isValidatingCoroutine: 0
 --- !u!1 &722556384
 GameObject:
   m_ObjectHideFlags: 0
@@ -4164,7 +4203,7 @@ GameObject:
   - component: {fileID: 1266143946}
   - component: {fileID: 1266143949}
   m_Layer: 5
-  m_Name: Button
+  m_Name: MetamaskButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5031,8 +5070,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.6374, y: 0}
-  m_SizeDelta: {x: 213.4324, y: 30}
+  m_AnchoredPosition: {x: 1.5791, y: 0}
+  m_SizeDelta: {x: 217.8618, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1441128141
 MonoBehaviour:
@@ -6349,7 +6388,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   networkUrl: https://data-seed-prebsc-1-s1.binance.org:8545/
-  contractAddress: 0x05c1c240934ac53c49970e003963d1eEaFBd8D33
+  networkExplorerUrl: https://testnet.bscscan.com/tx/
+  contractAddress: 0xe1Bd1f6baa1f0AE8d93efAf217357e120Cc409B1
   gasWalletAddress: 0xa4B8198E42268cf870297c77174318F0C6A43913
   gasWalletAddressPrivate: cdd4df549e0dda6ab7511c55cfa74f105791f1fd44fb6755a4a4349f034061c9
   grantTransactionHash: 

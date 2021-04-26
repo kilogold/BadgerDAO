@@ -18,20 +18,24 @@ public class WalletMenuPromptController : MonoBehaviour
         promptVisual.SetActive(false);
     }
 
-    public void NotReadyPrompt(ValidateWallet.InvalidStartArgs args)
+    public void NotReadyPrompt(WalletValidationCoordinator.ValidationOutcome args)
     {
         StopAllCoroutines();
 
         string message = null;
         switch (args.code)
         {
-            case ValidateWallet.InvalidStartArgs.Code.TooSoon:
+            case WalletValidationCoordinator.ValidationOutcome.Code.TooSoon:
                 BigInteger value = (BigInteger) args.value;
                 message = $"Wait {value.ToString("00")} seconds.";
                 break;
             
-            case ValidateWallet.InvalidStartArgs.Code.InvalidAddress:
+            case WalletValidationCoordinator.ValidationOutcome.Code.InvalidAddress:
                 message = "Invalid address.";
+                break;
+            
+            case WalletValidationCoordinator.ValidationOutcome.Code.DoesNotQualify:
+                message = "You don't qualify.";
                 break;
         }
         StartCoroutine(DisplayPrompt(message, promptDuration));

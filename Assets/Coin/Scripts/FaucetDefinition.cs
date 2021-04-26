@@ -10,7 +10,7 @@ using Nethereum.Contracts.CQS;
 using Nethereum.Contracts;
 using System.Threading;
 
-namespace Contracts.Contracts.Faucet.ContractDefinition
+namespace Contracts.Faucet.ContractDefinition
 {
     public partial class GetElapsedTimeFunction : GetElapsedTimeFunctionBase
     {
