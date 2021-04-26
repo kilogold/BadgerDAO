@@ -2333,9 +2333,9 @@ MonoBehaviour:
     - https://data-seed-prebsc-1-s1.binance.org:8545/
     _values:
     - collection:
-      - 0x32fC83Aa76623D6839A9DCDCfCF47Ad7Ea9410F2
+      - 0x9555D7C4C02659b678e0526eB41774e9c2FFdDeE
     - collection:
-      - 0x260E67541BD9F4Efa80B1A9445BcaBC0C94Bd7A4
+      - 0x0d1E9675988aF6A16bE2Ca7ea77e371756C5C4A8
   faucet: {fileID: 1863349324}
 --- !u!114 &708477824
 MonoBehaviour:
@@ -6389,7 +6389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   networkUrl: https://data-seed-prebsc-1-s1.binance.org:8545/
   networkExplorerUrl: https://testnet.bscscan.com/tx/
-  contractAddress: 0xe1Bd1f6baa1f0AE8d93efAf217357e120Cc409B1
+  contractAddress: 0xEaf4c92BC9Ef176cD29E5d888915A5e12662ea90
   gasWalletAddress: 0xa4B8198E42268cf870297c77174318F0C6A43913
   gasWalletAddressPrivate: cdd4df549e0dda6ab7511c55cfa74f105791f1fd44fb6755a4a4349f034061c9
   grantTransactionHash: 

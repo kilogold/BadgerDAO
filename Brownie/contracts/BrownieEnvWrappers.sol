@@ -17,15 +17,17 @@
 // Version of Solidity compiler this program was written for
 pragma solidity ^0.8.2;
 
-import "@openzeppelin/contracts/token/ERC20/presets/ERC20PresetFixedSupply.sol";
+import "@openzeppelin/contracts/token/ERC20/presets/ERC20PresetMinterPauser.sol";
 
-contract BrownieWrap_Token is ERC20PresetFixedSupply
+contract BrownieWrap_Token is ERC20PresetMinterPauser
 {
         constructor(
         string memory name,
-        string memory symbol,
-        uint256 initialSupply,
-        address owner
-    ) ERC20PresetFixedSupply(name, symbol, initialSupply, owner) {
+        string memory symbol
+    ) ERC20PresetMinterPauser(name, symbol) {
+    }
+
+    function mint(address to, uint256 amount) public override {
+        _mint(to, amount);
     }
 }
