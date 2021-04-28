@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: CC-BY-SA-4.0
 
 // Version of Solidity compiler this program was written for
-pragma solidity ^0.8.2;
+pragma solidity ^0.8.0;
 
 import "../interfaces/WalletValidator.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol"; 

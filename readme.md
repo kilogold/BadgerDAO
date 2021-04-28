@@ -8,7 +8,7 @@ This is a gamified faucet designed for qualifying members of the badger communit
 
 **Full Gameplay**: https://youtu.be/VAFihQhIPsw
 
-**Faucet Contract**: [0xEaf4c92BC9Ef176cD29E5d888915A5e12662ea90](https://testnet.bscscan.com/address/0xeaf4c92bc9ef176cd29e5d888915a5e12662ea90) ([source](Brownie/contracts/Faucet.sol))
+**Faucet Contract**: [0x3057ae5dda530e2887fe50b30382A13f2aE72FEe](https://testnet.bscscan.com/address/0x3057ae5dda530e2887fe50b30382A13f2aE72FEe) ([source](Brownie/contracts/Faucet.sol))
 
 ## Summary
 The Badger Rescue Faucet (BRF) is a mini-game that grants BNB to players who are whitelisted for use. Players must try catching coins falling from the clouds before time runs out, all while running across the edge of a cliff without falling off. Successful badgers will claim token amounts based on their performance. Unfortunate badgers will forfeit any collected coins. The coins represent a configurable amount of BNB granted to the players wallet upon winning.
@@ -19,9 +19,9 @@ The Badger Rescue Faucet (BRF) is a mini-game that grants BNB to players who are
 
 ## Technical Overview
 ### Whitelisting/Validation
-To qualify for faucet use, badgers must own at least `10 Wei` of bBadger on both [Ethereum](https://ropsten.etherscan.io/address/0x9143E3Aa6ccC7279713a204970eeCbdD1917c4B5) & [Binance Smart Chain](https://testnet.bscscan.com/address/0xAC762d89beCfaD230856491438321e1296E43960) testnets. 
-You can run the [minting brownie script](Brownie/scripts/deployment_test_mint.py) to grant yourself enough tokens
-
+To qualify for faucet use, badgers must own at least `10 Wei` of bBadger on both [Ethereum](https://ropsten.etherscan.io/address/0xBD2231994722D8a47244C4166Bc6Ac4bF8Bbc110) & [Binance Smart Chain](https://testnet.bscscan.com/address/0x926A513fdd63e1010e6C0627EB12204ADA45d550) testnets. 
+You can run the [minting brownie script](Brownie/scripts/deployment_test_mint.py) to grant yourself enough tokens.  
+You can view the validators [here](https://ropsten.etherscan.io/address/0x78F459703e3682F79F7e4504874Ea8850226764d) & [here](https://testnet.bscscan.com/address/0x08157968B5eE8B421C9cBE241906b6b9D831DBEC)
 
 ### Deployment Layout
 ![Alt text here](Documentation/Diagrams.svg)  
