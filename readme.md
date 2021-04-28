@@ -24,7 +24,7 @@ You can run the [minting brownie script](Brownie/scripts/deployment_test_mint.py
 
 
 ### Deployment Layout
-![Alt text here](Documentation/Diagrams.svg)
+![Alt text here](Documentation/Diagrams.svg)  
 The way to run validation/gate-keeping is via the game application itself, since it is network agnostic. The validation happens on-chain with [TokenHolderThresholdValidator](Brownie/contracts/BadgerValidation.sol) contracts. BSC contracts can't directly call Ethereum contracts, so we have the game independently call each network's contracts. It expects both validators to succeed before letting you actually play the game. These validators simply check if you have enough of a particular token to qualify for the faucet (aka, you meet the threshold of tokens held).
 At first, the game will prevent you from playing, because you need the qualifying token, which in this case is the [BrownieWrap_Token](Brownie/contracts/BrownieEnvWrappers.sol) (representative of bBadger). In the future, these validators can incorporate [BadgerTree](https://badger-finance.gitbook.io/badger-finance/badger-tree/tree-summary).
 
