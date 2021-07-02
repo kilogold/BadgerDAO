@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Runtime.InteropServices;
-using Contracts.Contracts.Faucet.ContractDefinition;
+using Contracts.Faucet.ContractDefinition;
 using Nethereum.JsonRpc.UnityClient;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,8 +13,9 @@ public class Faucet : MonoBehaviour
 {
     [DllImport("__Internal")]
     private static extern void OpenNewTab(string url);
-    
-    [SerializeField] string networkUrl = "https://ropsten.infura.io/v3/e95812f105a340cda6bfd2c67bc22f69";
+
+    [SerializeField] string networkUrl;
+    [SerializeField] string networkExplorerUrl;
 
     // Faucet address
     [SerializeField] string contractAddress;
@@ -27,6 +28,11 @@ public class Faucet : MonoBehaviour
     // User Wallet
     [SerializeField] InputField inputWalletAddress;
     
+    // Read-only API access. TODO: Move all config to a ScriptableObject.
+    public string ContractAddress => contractAddress;
+    public string NetworkUrl => networkUrl;
+
+
     public byte grantRequestCurrentScore;
     public byte grantRequestTotalScore;
 
@@ -58,7 +64,7 @@ public class Faucet : MonoBehaviour
 
     public void LaunchEtherscan()
     {
-        string url = "https://ropsten.etherscan.io/tx/" + grantTransactionHash;
+        string url = networkExplorerUrl + grantTransactionHash;
         Debug.Log("Opening URL: "+ url);
         
 #if !UNITY_EDITOR && UNITY_WEBGL
@@ -110,10 +116,10 @@ public class Faucet : MonoBehaviour
         {
             Debug.LogError(transactionTransferRequest.Exception.Message);
         }
-        
+
         string transactionHash = transactionTransferRequest.Result;
         Debug.Log(transactionHash);
-        
+
         OnRequestGrant?.Invoke(transactionHash);
         grantTransactionHash = transactionHash;
     }
