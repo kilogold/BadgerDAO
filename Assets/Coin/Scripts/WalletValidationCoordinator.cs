@@ -31,7 +31,7 @@ public class WalletValidationCoordinator : MonoBehaviour
     public void Validate()
     {
         if (validationCR != null)
-            return;
+            return; // Validation in progress. Ignore validation call.
         
         var offChainOutcome = offChainValidation.Validate();
         
